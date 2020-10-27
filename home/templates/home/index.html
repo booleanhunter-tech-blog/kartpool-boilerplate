@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Kartpool</title>
+
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+        <link
+            rel="stylesheet" type="text/css"
+            href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"   
+        />
+
+        {% load static %}
+            <link rel="stylesheet" type="text/css" href="{% static 'home/stylesheets/index.css' %}" media="screen"/>
+
+        <meta name="description" content="A community driven delivery platform for the ones who need it the most!" />
+        <meta
+            name="keywords"
+            content="kartpool, community-driven, delivery-platform, egen, ashwin hariharan, projects, open source, tutorial"
+        >
+    </head>
+    <body data-username={{ username }}>
+        <header class="flex-container">
+            <div class="flex-item">
+                <h1 id="logo">
+                    Kartpool
+                </h1>
+            </div>
+
+            <div class="flex-item">
+                <h1> Welcome, {{ username }} </h1>
+            </div>
+        </header>
+
+        <main class="flex-container">
+            <section class="flex-item">
+                <h1>
+                    Wishlists
+                </h1>
+                <section>
+                    <div class="tabset">
+                        <input type="radio" name="tabs" aria-label="Nearby" id="tab1"  checked/>
+                        <input type="radio" name="tabs" aria-label="My requests" id="tab2" />
+                        <input type="radio" name="tabs" aria-label="my trips" id="tab3" />
+
+                        <ul aria-hidden="true">
+                            <li role="tab">
+                                <label for="tab1">Nearby</label>
+                            </li>
+                            <li role="tab">
+                                <label for="tab2">My requests</label>
+                            </li>
+                            <li role="tab">
+                                <label for="tab3">My trips</label>
+                            </li>
+                        </ul>
+
+                        <div>
+                            <section role="tabpanel" aria-labelledby="Nearby wishlists" class="wishlists">
+                                <ol id="nearby-wishlists">
+                                    <!-- Load wishlists -->
+                                </ol>
+                            </section>
+
+                            <section role="tabpanel" aria-labelledby="My wishlists" class="wishlists">
+                                <ol id="my-wishlists"><!-- Load wishlists --></ol>
+                            </section>
+
+                            <section role="tabpanel" aria-labelledby="My trips" class="wishlists">
+                                <ol id="my-trips"><!-- Load wishlists --></ol>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <section aria-label="Create a wishlist">
+                    <input
+                        id="wishlist-items"
+                        placeholder="Select a store and add items"
+                        aria-label="Select a store and add items"
+                        required >
+                    <button id="add-wishlist">
+                        Add a wishlist
+                    </button>
+                </section>
+                
+            </section>
+
+            <section class="flex-item">
+                <h1>
+                    Your neighborhood
+                </h1>
+                <div id="map">
+                    <!-- Load map here -->
+                </div>
+                
+            </section>
+        </main>
+
+        <script type="text/javascript" src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+        <script type="text/javascript" src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+
+        {% load static %}
+            <script type="module" src="{% static 'home/modules/index.js' %}"></script>
+
+        <noscript>
+            This application requires JavaScript to be enabled
+        </noscript>
+    </body>
+</html>
