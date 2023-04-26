@@ -26,6 +26,13 @@ I highly recommend a Docker installation:
 3. **Install [GDAL](https://gdal.org/) (Required for Django to interface with PostGIS)**
     - `sudo apt-get install libpq-dev python-dev`
     - `sudo apt-get install binutils libproj-dev gdal-bin`
+    If you need to work with GIS data in Python on Windows, you can install the "pyproj" and "gdal" Python packages using "pip" as follows:
+    `pip install pyproj`
+
+    `pip install gdal`
+
+
+
 
 4. **Create a python virtual environment using `venv`**
     `python -m venv ~/python-virtual-environments/kartpool`
@@ -34,7 +41,7 @@ I highly recommend a Docker installation:
     `source ~/python-virtual-environments/kartpool/bin/activate`
 
 6. **Install Django and other dependencies**
-    `pip install -r requirements.text`
+    `pip install -r requirements.txt`
 
 ## Instructions to run
 
